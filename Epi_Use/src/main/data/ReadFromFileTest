@@ -1,0 +1,17 @@
+
+{ "Employees" : [
+
+
+ {
+    "Name": "John",
+    "Surname": "Smith",
+    "Birth Date": "12-10-1985",
+    "EmployeeNumber": "1",
+    "Salary": "700000",
+    "RoleDesignation": "Manager",
+    "ReportsTo": ""
+}
+]
+}
+
+

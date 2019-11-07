@@ -1,0 +1,224 @@
+
+{ "Employees" : [
+
+
+ {
+    "Name": "John",
+    "Surname": "Smith",
+    "Birth Date": "12-10-1985",
+    "EmployeeNumber": "1",
+    "Salary": "700000",
+    "RoleDesignation": "Manager",
+    "ReportsTo": ""
+},
+{
+    "Name": "Jim",
+    "Surname": "Bean",
+    "Birth Date": "21-04-1976",
+    "EmployeeNumber": "2",
+    "Salary": "650000",
+    "RoleDesignation": "Employee",
+    "ReportsTo": "Jane"
+},
+{
+    "Name": "Susan",
+    "Surname": "Roe",
+    "Birth Date": "18-07-1994",
+    "EmployeeNumber": "3",
+    "Salary": "250000",
+    "RoleDesignation": "Trainee",
+    "ReportsTo": "Jim"
+},
+{
+    "Name": "Roger",
+    "Surname": "Wilco",
+    "Birth Date": "14-11-1996",
+    "EmployeeNumber": "4",
+    "Salary": "190000",
+    "RoleDesignation": "Trainee",
+    "ReportsTo": "Jim"
+},
+{
+    "Name": "Jane",
+    "Surname": "Doe",
+    "Birth Date": "14-02-1975",
+    "EmployeeNumber": "5",
+    "Salary": "600000",
+    "RoleDesignation": "Employee",
+    "ReportsTo": "John"
+},
+ {
+     "Name": "Test1",
+     "Surname": "Test1",
+     "Birth Date": "14-02-1975",
+     "EmployeeNumber": "6",
+     "Salary": "600000",
+     "RoleDesignation": "Employee",
+     "ReportsTo": "John"
+ },
+ {
+     "Name": "Test2",
+     "Surname": "Test2",
+     "Birth Date": "14-02-1975",
+     "EmployeeNumber": "7",
+     "Salary": "600000",
+     "RoleDesignation": "Trainee",
+     "ReportsTo": "Test1"
+ },
+ {
+     "Name": "Test3",
+     "Surname": "Test3",
+     "Birth Date": "14-02-1975",
+     "EmployeeNumber": "8",
+     "Salary": "600000",
+     "RoleDesignation": "Employee",
+     "ReportsTo": "Test1"
+ },
+ {
+     "Name": "Test4",
+     "Surname": "Test4",
+     "Birth Date": "14-02-1975",
+     "EmployeeNumber": "9",
+     "Salary": "600000",
+     "RoleDesignation": "Employee",
+     "ReportsTo": "Test1"
+ },
+ {
+     "Name": "Test5",
+     "Surname": "Test5",
+     "Birth Date": "14-02-1975",
+     "EmployeeNumber": "10",
+     "Salary": "600000",
+     "RoleDesignation": "Trainee",
+     "ReportsTo": "Test3"
+ },
+ {
+     "Name": "Test6",
+     "Surname": "Test6",
+     "Birth Date": "14-02-1975",
+     "EmployeeNumber": "11",
+     "Salary": "600000",
+     "RoleDesignation": "Trainee",
+     "ReportsTo": "Test3"
+ },
+ {
+     "Name": "MANAGERTEST",
+     "Surname": "Smith",
+     "Birth Date": "12-10-1985",
+     "EmployeeNumber": "1",
+     "Salary": "700000",
+     "RoleDesignation": "Manager",
+     "ReportsTo": ""
+ },
+  {
+     "Name": "Employee1",
+     "Surname": "Smith",
+     "Birth Date": "12-10-1985",
+     "EmployeeNumber": "1",
+     "Salary": "700000",
+     "RoleDesignation": "Employee",
+     "ReportsTo": "MANAGERTEST"
+ },
+  {
+     "Name": "Trainee1",
+     "Surname": "Smith",
+     "Birth Date": "12-10-1985",
+     "EmployeeNumber": "1",
+     "Salary": "700000",
+     "RoleDesignation": "Trainee",
+     "ReportsTo": "Employee1"
+ },
+  {
+     "Name": "Trainee2",
+     "Surname": "Smith",
+     "Birth Date": "12-10-1985",
+     "EmployeeNumber": "1",
+     "Salary": "700000",
+     "RoleDesignation": "Trainee",
+     "ReportsTo": "Employee2"
+ },
+  {
+     "Name": "Employee2",
+     "Surname": "Smith",
+     "Birth Date": "12-10-1985",
+     "EmployeeNumber": "1",
+     "Salary": "700000",
+     "RoleDesignation": "Trainee",
+     "ReportsTo": "MANAGERTEST"
+ },
+ {
+      "Name": "Long",
+      "Surname": "Tree",
+      "Birth Date": "12-10-1985",
+      "EmployeeNumber": "1",
+      "Salary": "700000",
+      "RoleDesignation": "Employee",
+      "ReportsTo": "Test4"
+  },
+  {
+        "Name": "Long1",
+        "Surname": "Tree",
+        "Birth Date": "12-10-1985",
+        "EmployeeNumber": "1",
+        "Salary": "700000",
+        "RoleDesignation": "Employee",
+        "ReportsTo": "Long"
+    },
+    {
+            "Name": "Long2",
+            "Surname": "Tree",
+            "Birth Date": "12-10-1985",
+            "EmployeeNumber": "1",
+            "Salary": "700000",
+            "RoleDesignation": "Employee",
+            "ReportsTo": "Long1"
+        },
+        {
+                "Name": "Long3",
+                "Surname": "Tree",
+                "Birth Date": "12-10-1985",
+                "EmployeeNumber": "1",
+                "Salary": "700000",
+                "RoleDesignation": "Employee",
+                "ReportsTo": "Long2"
+            },
+            {
+                            "Name": "Long4",
+                            "Surname": "Tree",
+                            "Birth Date": "12-10-1985",
+                            "EmployeeNumber": "1",
+                            "Salary": "700000",
+                            "RoleDesignation": "Employee",
+                            "ReportsTo": "Long3"
+                        },
+                        {
+                                        "Name": "Long5",
+                                        "Surname": "Tree",
+                                        "Birth Date": "12-10-1985",
+                                        "EmployeeNumber": "1",
+                                        "Salary": "700000",
+                                        "RoleDesignation": "Employee",
+                                        "ReportsTo": "Long4"
+                                    },
+                                    {
+                                                    "Name": "Long6",
+                                                    "Surname": "Tree",
+                                                    "Birth Date": "12-10-1985",
+                                                    "EmployeeNumber": "1",
+                                                    "Salary": "700000",
+                                                    "RoleDesignation": "Employee",
+                                                    "ReportsTo": "Long5"
+                                                },
+                                                {
+                                                                "Name": "Long7",
+                                                                "Surname": "Tree",
+                                                                "Birth Date": "12-10-1985",
+                                                                "EmployeeNumber": "1",
+                                                                "Salary": "700000",
+                                                                "RoleDesignation": "Employee",
+                                                                "ReportsTo": "Long6"
+                                                            }
+]
+}
+
+
