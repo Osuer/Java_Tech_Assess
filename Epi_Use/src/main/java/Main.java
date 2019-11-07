@@ -55,7 +55,8 @@ public class Main {
         String userOptions = "Functions Available: \n 1, Search Employee Details by Name \n" +
                 "2, Search Employees Older Than a Specific Date \n" +
                 "3, View Orginizational Structure \n" +
-                "4, View Highest Earning Employees \n";
+                "4, View Highest Earning Employees \n" +
+                "5, Quit \n";
         System.out.print(userOptions);
 
         // get their input as a String
@@ -67,7 +68,7 @@ public class Main {
             case "1":
                 System.out.println("Please Enter the Employee's Name Which You Wish to Search: ");
                 option = scanner.next().toLowerCase();
-                function.printSearchedForEmployee(option, EmployeeList);
+                System.out.println(function.printSearchedForEmployee(option));
                 break;
             case "2":
                 System.out.println("Please Enter the Date You Wish To Search From: Format(dd-MM-yyyy) \n ");
@@ -114,11 +115,22 @@ public class Main {
 
                 break;
             case "4":
+                //===================== Other way to Sort list using COMPARATOR =======================
+
+                //EmployeeSalaryComparator comp = new EmployeeSalaryComparator();
+                //Collections.sort(EmployeeList, comp);
+
+                //=====================================================================================
+                Collections.sort(EmployeeList);
                 String output = "The highest earning member on each tier level is:\n\n";
                 output += function.getHigestEarningManager(EmployeeList) + "\n\n";
                 output += function.getHigestEarningEmployee(EmployeeList) + "\n\n";
                 output += function.getHigestEarningTrainee(EmployeeList) + "\n\n";
                 System.out.println(output);
+                //System.out.println(EmployeeList);
+                break;
+            case "5":
+                System.out.println(("Quitting . . .\n"));
                 break;
             default:
                 System.out.println(("Not a valid option!\n"));

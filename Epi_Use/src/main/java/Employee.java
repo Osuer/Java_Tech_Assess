@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Employee {
+public class Employee implements Comparable<Employee>{
     SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
     NumberFormat formatDouble = new DecimalFormat("#000,000.00");
     String fName = "";
@@ -77,5 +77,10 @@ public class Employee {
                 "\nRole Designation: " + employeeRole+
                 "\nReports To: " + repTo;
 
+    }
+
+    @Override
+    public int compareTo(Employee o) {
+        return Double.compare(o.getEmployeeSalary() , this.getEmployeeSalary());
     }
 }

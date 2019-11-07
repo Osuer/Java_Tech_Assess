@@ -7,13 +7,13 @@ import java.util.*;
 public class ProgramFunctions {
 
     // ================================ QUESTION 1 ==============================
-    public String printSearchedForEmployee(String name, ArrayList<Employee> list){
+    public String printSearchedForEmployee(String name){
         boolean nameFound = false;
         String toReturn = "";
         name = name.toLowerCase();
-        for( int x = 0; x < list.size() ; x++){
-            if(list.get(x).getfName().toLowerCase().equals(name) ){
-                toReturn += list.get(x).toString();
+        for( int x = 0; x < Main.EmployeeList.size() ; x++){
+            if(Main.EmployeeList.get(x).getfName().toLowerCase().equals(name) ){
+                toReturn += Main.EmployeeList.get(x).toString();
                 nameFound = true;
                 break;
             }
@@ -49,8 +49,8 @@ public class ProgramFunctions {
         NumberFormat formatDouble = new DecimalFormat("#000,000.00");
         Employee tempEmp;
         String toReturn = "";
-        EmployeeSalaryComparator compare = new EmployeeSalaryComparator();
-        Collections.sort(list, compare);
+//        EmployeeSalaryComparator compare = new EmployeeSalaryComparator();
+//        Collections.sort(list, compare);
         for(int x = 0 ; x < list.size() ; x++ ){
             if(list.get(x).getEmployeeRole().equals("Manager")){
                 tempEmp = new Employee(list.get(x));
@@ -65,8 +65,8 @@ public class ProgramFunctions {
         NumberFormat formatDouble = new DecimalFormat("#000,000.00");
         Employee tempEmp;
         String toReturn = "";
-        EmployeeSalaryComparator compare = new EmployeeSalaryComparator();
-        Collections.sort(list, compare);
+//        EmployeeSalaryComparator compare = new EmployeeSalaryComparator();
+//        Collections.sort(list, compare);
         for(int x = 0 ; x < list.size() ; x++ ){
             if(list.get(x).getEmployeeRole().equals("Employee")){
                 tempEmp = new Employee(list.get(x));
@@ -81,8 +81,8 @@ public class ProgramFunctions {
         NumberFormat formatDouble = new DecimalFormat("#000,000.00");
         Employee tempEmp;
         String toReturn = "";
-        EmployeeSalaryComparator compare = new EmployeeSalaryComparator();
-        Collections.sort(list, compare);
+//        EmployeeSalaryComparator compare = new EmployeeSalaryComparator();
+//        Collections.sort(list, compare);
         for(int x = 0 ; x < list.size() ; x++ ){
             if(list.get(x).getEmployeeRole().equals("Trainee")){
                 tempEmp = new Employee(list.get(x));

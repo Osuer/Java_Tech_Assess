@@ -27,6 +27,6 @@ public class JsonReaderTest {
         File file = new File("src/main/data/ReadFromFileTest");
         actualObject = reader.readJsonObjectFromFile(file);
         expectedObject = new JSONObject(jsonString);
-        assertEquals("Failed!", expectedObject.toString(), actualObject.toString());
+        assertEquals("Employee Key Missing!", expectedObject.toString(), actualObject.toString());
     }
 }

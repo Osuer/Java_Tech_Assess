@@ -28,9 +28,9 @@ public class ProgramFunctionsTest {
     @Test
     public void printSearchedForEmployee() {
         String expected = "This employee name could not be found!";
-        assertEquals("Employee does not exist but nothing happens!", expected, function.printSearchedForEmployee("John", empList));
+        assertEquals("Employee does not exist but nothing happens!", expected, function.printSearchedForEmployee("John"));
         expected = emp.toString();
-        assertEquals("Employee details not printed right!", expected, function.printSearchedForEmployee("Chane", empList));
+        assertEquals("Employee details not printed right!", expected, function.printSearchedForEmployee("Chane"));
     }
 
     @Test
