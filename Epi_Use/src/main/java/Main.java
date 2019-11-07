@@ -49,93 +49,104 @@ public class Main {
             nodeList.put(tempEmp.getfName(), tempNode);
         }
 
+
+
         Scanner scanner = new Scanner(System.in);
+        boolean quit = false;
+        while(!quit){
 
-        //  prompt for the users input
-        String userOptions = "Functions Available: \n 1, Search Employee Details by Name \n" +
-                "2, Search Employees Older Than a Specific Date \n" +
-                "3, View Orginizational Structure \n" +
-                "4, View Highest Earning Employees \n" +
-                "5, Quit \n";
-        System.out.print(userOptions);
+            //System.out.println(("Business Hierarchy: \n ====================== \n"));
+            //  prompt for the users input
+            String userOptions = "============================================== \n Functions Available: \n 1, Search Employee Details by Name \n" +
+                    "2, Search Employees Older Than a Specific Date \n" +
+                    "3, View Orginizational Structure \n" +
+                    "4, View Highest Earning Employees \n" +
+                    "5, Quit \n";
+            System.out.print(userOptions);
 
-        // get their input as a String
-        String option = scanner.next();
-        System.out.println("You have selected Option: " + option + "\n");
+            // get their input as a String
+            String option = scanner.next();
+            System.out.println("============================================== \n You have selected Option: " + option + "\n");
 
-        //switch based upon input
-        switch(option){
-            case "1":
-                System.out.println("Please Enter the Employee's Name Which You Wish to Search: ");
-                option = scanner.next().toLowerCase();
-                System.out.println(function.printSearchedForEmployee(option));
-                break;
-            case "2":
-                System.out.println("Please Enter the Date You Wish To Search From: Format(dd-MM-yyyy) \n ");
-                option = scanner.next();
-                Date startDate = null;
-                try {
-                    startDate = formatter.parse(option);
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-                String toPrint = function.getEmployeesOlderThanSpecifiedDateToString(startDate);
-                System.out.println(toPrint);
-                break;
+            //switch based upon input
+            switch(option){
+                case "1":
+                    System.out.println("============================================== \nPlease Enter the Employee's Name Which You Wish to Search: ");
+                    option = scanner.next().toLowerCase();
+                    System.out.println(function.printSearchedForEmployee(option));
+                    break;
+                case "2":
+                    System.out.println("============================================== \nPlease Enter the Date You Wish To Search From: Format(dd-MM-yyyy) \n ");
+                    option = scanner.next();
+                    Date startDate = null;
+                    try {
+                        startDate = formatter.parse(option);
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+                    String toPrint = function.getEmployeesOlderThanSpecifiedDateToString(startDate);
+                    System.out.println("============================================== \nThe following employees are older than the date entered: \n ");
+                    System.out.println(toPrint);
+                    break;
 
-            case "3":
-                List<String> managerList = new ArrayList<String>();
-                String name = "";
-                String reportingTo = "";
-                List<String> reportToList = new ArrayList<String>();
-                for(int x = 0; x < Main.EmployeeList.size() ; x++){
-                    name = Main.EmployeeList.get(x).getfName();
-                    for(int y = 0 ; y < Main.EmployeeList.size() ; y++){
-                        reportingTo = Main.EmployeeList.get(y).getRepTo();
-                        if(name.equals(reportingTo) ){
-                            reportToList.add(Main.EmployeeList.get(y).getfName());
+                case "3":
+                    System.out.println(("Business Hierarchy: \n \n ============================================== \n"));
+                    List<String> managerList = new ArrayList<String>();
+                    String name = "";
+                    String reportingTo = "";
+                    List<String> reportToList = new ArrayList<String>();
+                    for(int x = 0; x < Main.EmployeeList.size() ; x++){
+                        name = Main.EmployeeList.get(x).getfName();
+                        for(int y = 0 ; y < Main.EmployeeList.size() ; y++){
+                            reportingTo = Main.EmployeeList.get(y).getRepTo();
+                            if(name.equals(reportingTo) ){
+                                reportToList.add(Main.EmployeeList.get(y).getfName());
+                            }
+                        }
+                        List<String> tempCopy = new ArrayList<String>(reportToList);
+                        reportToMap.put(name, tempCopy );
+                        reportToList.clear();
+                    }
+                    for(int x = 0 ; x < EmployeeList.size() ; x++){
+                        if(EmployeeList.get(x).getEmployeeRole().equals("Manager")){
+                            managerList.add(EmployeeList.get(x).getfName());
                         }
                     }
-                    List<String> tempCopy = new ArrayList<String>(reportToList);
-                    reportToMap.put(name, tempCopy );
-                    reportToList.clear();
-                }
-                for(int x = 0 ; x < EmployeeList.size() ; x++){
-                    if(EmployeeList.get(x).getEmployeeRole().equals("Manager")){
-                        managerList.add(EmployeeList.get(x).getfName());
+
+
+                    for(int x = 0 ; x < managerList.size() ; x++){
+                        tempNode = nodeList.get(managerList.get(x));
+                        function.buildHierarcyTree(tempNode);
+                        function.printHierarcyTree(tempNode, 0);
                     }
-                }
 
+                    break;
+                case "4":
+                    //===================== Other way to Sort list using COMPARATOR =======================
 
-                for(int x = 0 ; x < managerList.size() ; x++){
-                    tempNode = nodeList.get(managerList.get(x));
-                    function.buildHierarcyTree(tempNode);
-                    function.printHierarcyTree(tempNode, 0);
-                }
+                    //EmployeeSalaryComparator comp = new EmployeeSalaryComparator();
+                    //Collections.sort(EmployeeList, comp);
 
-                break;
-            case "4":
-                //===================== Other way to Sort list using COMPARATOR =======================
+                    //=====================================================================================
+                    Collections.sort(EmployeeList);
+                    String output = "============================================== \nThe highest earning member on each tier level is:\n\n";
+                    output += function.getHigestEarningManager(EmployeeList) + "\n\n";
+                    output += function.getHigestEarningEmployee(EmployeeList) + "\n\n";
+                    output += function.getHigestEarningTrainee(EmployeeList) + "\n\n";
+                    System.out.println(output);
+                    //System.out.println(EmployeeList);
+                    break;
+                case "5":
+                    System.out.println(("Quitting . . .\n"));
+                    quit = true;
+                    break;
+                default:
+                    System.out.println(("Not a valid option!\n"));
+                    break;
+            }
 
-                //EmployeeSalaryComparator comp = new EmployeeSalaryComparator();
-                //Collections.sort(EmployeeList, comp);
-
-                //=====================================================================================
-                Collections.sort(EmployeeList);
-                String output = "The highest earning member on each tier level is:\n\n";
-                output += function.getHigestEarningManager(EmployeeList) + "\n\n";
-                output += function.getHigestEarningEmployee(EmployeeList) + "\n\n";
-                output += function.getHigestEarningTrainee(EmployeeList) + "\n\n";
-                System.out.println(output);
-                //System.out.println(EmployeeList);
-                break;
-            case "5":
-                System.out.println(("Quitting . . .\n"));
-                break;
-            default:
-                System.out.println(("Not a valid option!\n"));
-                break;
         }
+
     }
 
 }
